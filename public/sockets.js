@@ -9,6 +9,4 @@ const saveNotes = (title, description) => {
 
 socket.on('server:newnote', appendNote);
 
-socket.on('server:loadnotes', notes => {
-    console.log(notes)
-})
+socket.on('server:loadnotes', renderNotes)
