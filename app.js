@@ -24,11 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 io.on('connection', (socket) => {
     console.log('Nueva conexion:', socket.id)
 
-    // socket.emit('ping')
-
-    // socket.on('pong', () => {
-    //     console.log('Pong!!!')
-    // })
+    socket.emit('server:loadnotes', notes)
 
     socket.on('client:newnote', newNote => {
 
